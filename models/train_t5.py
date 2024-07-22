@@ -75,7 +75,7 @@ def main():
         gradient_accumulation_steps=opts.gradient_accumulation_steps,
         per_device_eval_batch_size=int(opts.eval_batch_size / opts.gradient_accumulation_steps),
         weight_decay=opts.weight_decay,
-        save_total_limit=2,
+        save_total_limit=1,
         load_best_model_at_end=True,
         num_train_epochs=opts.epochs,
         save_strategy="epoch",
