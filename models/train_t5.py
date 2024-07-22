@@ -85,7 +85,8 @@ def main():
         seed=opts.seed,
         data_seed=opts.seed,
         metric_for_best_model='oqo',
-        greater_is_better=True
+        greater_is_better=True,
+        save_strategy="no"
     )
 
     compute_metrics = get_compute_metrics_func(tokenizer, val_dataset)
