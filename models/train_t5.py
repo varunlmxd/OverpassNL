@@ -66,7 +66,7 @@ def main():
     output_path = os.path.join(opts.output_dir, group, output_name)
     args = Seq2SeqTrainingArguments(
         output_dir=output_path,
-        evaluation_strategy="epoch",
+        evaluation_strategy="no",
         eval_steps=50,
         learning_rate=opts.learning_rate,  # maybe 0.0003
         lr_scheduler_type=opts.lr_scheduler_type,
@@ -89,7 +89,6 @@ def main():
         data_seed=opts.seed,
         metric_for_best_model='oqo',
         greater_is_better=True
-        evaluation_strategy="no"
     )
 
     compute_metrics = get_compute_metrics_func(tokenizer, val_dataset)
