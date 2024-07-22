@@ -83,7 +83,7 @@ def main():
         max_grad_norm=opts.max_grad_norm,  # maybe 0.5
         predict_with_generate=True,
         #bf16=True,
-        push_to_hub=False,
+        push_to_hub=True,
         overwrite_output_dir=True,
         seed=opts.seed,
         data_seed=opts.seed,
