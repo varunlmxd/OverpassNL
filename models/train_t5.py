@@ -67,7 +67,6 @@ def main():
     args = Seq2SeqTrainingArguments(
         output_dir=output_path,
         evaluation_strategy="no",
-        eval_steps=50,
         learning_rate=opts.learning_rate,  # maybe 0.0003
         lr_scheduler_type=opts.lr_scheduler_type,
         warmup_ratio=opts.warmup,  # maybe 0.1
