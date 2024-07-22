@@ -79,6 +79,7 @@ def main():
         load_best_model_at_end=True,
         num_train_epochs=opts.epochs,
         save_strategy="epoch",
+        optim="paged_adamw_32bit",
         max_grad_norm=opts.max_grad_norm,  # maybe 0.5
         predict_with_generate=True,
         #bf16=True,
