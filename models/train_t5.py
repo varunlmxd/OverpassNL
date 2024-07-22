@@ -44,7 +44,7 @@ converter = OverpassXMLConverter(url=opts.converter_url, save_frequency=-1)
 def main():
     tokenizer = AutoTokenizer.from_pretrained(opts.model_name)
 
-    model = T5ForConditionalGeneration.from_pretrained(opts.model_name)
+    model = T5ForConditionalGeneration.from_pretrained(opts.model_name,device_map="auto")
     model.config.max_length = opts.max_length
 
     train_texts, train_labels = read_overpass_split(opts.data_dir + "/dataset.train")
