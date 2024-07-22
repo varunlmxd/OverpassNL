@@ -89,6 +89,7 @@ def main():
         data_seed=opts.seed,
         metric_for_best_model='oqo',
         greater_is_better=True
+        evaluation_strategy="no"
     )
 
     compute_metrics = get_compute_metrics_func(tokenizer, val_dataset)
@@ -109,6 +110,7 @@ def main():
     trainer.save_model(output_dir=output_path)
     trainer.save_state()
     print('model saved to ' + output_path)
+    trainer.evaluate()
 
 
 def get_compute_metrics_func(tokenizer, val_dataset):
