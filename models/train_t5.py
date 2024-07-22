@@ -27,7 +27,7 @@ parser.add_argument('--weight_decay', default=0.1, type=float)
 parser.add_argument('--max_grad_norm', default=1.0, type=float)
 parser.add_argument('--learning_rate', default=4e-4, type=float)
 parser.add_argument('--lr_scheduler_type', default='linear', type=str)
-parser.add_argument('--converter_url', default="http://localhost:12346/api/convert", type=str)
+parser.add_argument('--converter_url', default="https://overpass-api.de/api/convert", type=str)
 
 parser.add_argument('--use_comments_task', default=False, type=bool)
 parser.add_argument('--comment_max_count', default=10, type=int)
