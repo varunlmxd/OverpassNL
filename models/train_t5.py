@@ -48,7 +48,7 @@ def main():
     model.config.max_length = opts.max_length
 
     train_texts, train_labels = read_overpass_split(opts.data_dir + "/dataset.train")
-    val_texts, val_labels = read_overpass_split(opts.data_dir + "/dataset.dev")
+    val_texts, val_labels = read_overpass_split(opts.data_dir + "/dataset.test")
 
     comments_dataset = None
     if opts.use_comments_task:
@@ -100,13 +100,6 @@ def main():
         tokenizer=tokenizer,
         compute_metrics=compute_metrics
     )
-
-    trainer.train()
-
-    shutil.rmtree(output_path)
-    trainer.save_model(output_dir=output_path)
-    trainer.save_state()
-    print('model saved to ' + output_path)
     trainer.evaluate()
 
 
